@@ -47,6 +47,8 @@ python manage.py runserver
 - Manage past queries through your dashboard.
 - Explore the “Top 10 Names of the Week” to see trending names.
 
+
+
 ## Credits
 
 - **Albert Hua** - [GitHub Profile](https://github.com/alr04)
@@ -54,6 +56,29 @@ python manage.py runserver
 - **Joshua Brown** - [GitHub Profile](https://github.com/RTOUSchoolAccount)
 - **Justin Elia** - [GitHub Profile](https://github.com/jelia4PF)
 
+## License
 
+This project uses the 3-Clause BSD License. For more details, see the [LICENSE](LICENSE) file.
+
+## How to Contribute
+
+We welcome contributions! To contribute, please fork the repository, create a branch for your changes, and submit a pull request. Refer to the [Contributor Covenant](https://www.contributor-covenant.org/) for contribution guidelines.
+
+
+## Tests
+
+To run tests for NameCrafter:
+
+1. Install Django:
+
+    ```bash
+    pip install django
+    ```
+
+2. Run the tests:
+
+    ```bash
+    python manage.py test
+    ```
 
  
