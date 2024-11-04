@@ -3,6 +3,11 @@
 
 from django.shortcuts import render
 
+from .forms import LoginForm
+
 
 def login(request):
-    return render(request, 'login/login.html')
+    form = LoginForm()
+    return render(request, 'login/login.html', {
+        'form': form,
+    })
