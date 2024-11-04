@@ -16,3 +16,44 @@ This project fills the gap where there aren’t many interactive numerology tool
 ## Lessons Learned
 
 While working on NameCrafter, we learned a lot about Chaldean numerology, using Django, building RESTful APIs, and designing user-friendly interfaces. This project pushed us to create a cool experience that combines cultural history with today’s tech.
+
+**Installation**
+
+# 1. Clone the repository
+git clone https://github.com/your-username/namecrafter.git
+
+# 2. Navigate to the project directory
+cd namecrafter
+
+# 3. Install Django
+pip install django
+
+# 4. Set up environment variables by creating a .env file in the root directory
+
+# Open the .env file and add necessary settings like database credentials
+
+# 5. Start the Django development server
+python manage.py runserver
+
+# 6. Access the application at the following URL:
+# http://127.0.0.1:8000
+
+
+## Usage
+
+- Register for an account and log in.
+- Enter desired traits and characteristics related to Chaldean numerology.
+- View the generated names based on your inputs.
+- Manage past queries through your dashboard.
+- Explore the “Top 10 Names of the Week” to see trending names.
+
+## Credits
+
+- **Albert Hua** - [GitHub Profile](https://github.com/alr04)
+- **Drake Weller** - [GitHub Profile](https://github.com/DrakeJay)
+- **Joshua Brown** - [GitHub Profile](https://github.com/RTOUSchoolAccount)
+- **Justin Elia** - [GitHub Profile](https://github.com/jelia4PF)
+
+
+
+ 
