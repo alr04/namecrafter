@@ -1,60 +1,192 @@
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Gmail with screen readers
+1 of 17,432
+HTML Template
+Inbox
+
+Albert Hua <ashua@oakland.edu>
+5:04 PM (0 minutes ago)
+to me
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login Form Design | CodeLab</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script>
-         tailwind.config = {
-           theme: {
-             extend: {
-               colors: {
-                 primary: '#4158d0',
-                 secondary: '#c850c0'
-               },
-               fontFamily: {
-                 poppins: ['Poppins', 'sans-serif'],
-               },
-             },
-           },
-         };
-      </script>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-   </head>
-   <body class="h-screen w-full flex items-center justify-center bg-gray-200 font-poppins">
-      <div class="w-96 bg-white rounded-lg shadow-lg">
-         <div class="text-4xl font-semibold text-center text-white py-8 rounded-t-lg bg-gradient-to-r from-secondary to-primary">
-            Login Form
-         </div>
-         <form action="#" class="px-8 py-10">
-            <div class="relative mb-5">
-               <input type="text" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
-               <label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
-                  Email Address
-               </label>
-            </div>
-            <div class="relative mb-5">
-               <input type="password" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
-               <label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
-                  Password
-               </label>
-            </div>
-            <div class="flex items-center justify-between mb-5">
-               <div class="flex items-center">
-                  <input type="checkbox" id="remember-me" class="w-4 h-4 text-primary rounded focus:ring-primary">
-                  <label for="remember-me" class="ml-2 text-gray-700">Remember me</label>
-               </div>
-               <a href="#" class="text-primary hover:underline">Forgot password?</a>
-            </div>
-            <div class="mb-5">
-               <input type="submit" value="Login" class="w-full h-12 bg-gradient-to-r from-secondary to-primary text-white text-lg font-medium rounded-full cursor-pointer transition transform hover:scale-95">
-            </div>
-            <div class="text-center text-gray-700">
-               Not a member? <a href="#" class="text-primary hover:underline">Signup now</a>
-            </div>
-         </form>
-      </div>
-   </body>
+<head>
+<meta charset="utf-8">
+<title>NameCrafter | Login</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#4158d0',
+secondary: '#c850c0'
+},
+fontFamily: {
+poppins: ['Poppins', 'sans-serif'],
+},
+},
+},
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Include Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="h-screen w-full flex items-center justify-center bg-gray-200 font-poppins relative overflow-hidden">
+
+<!-- Particle background container -->
+<div id="particles-js" class="absolute inset-0 z-0"></div>
+
+<!-- Colored overlay for purple/blue tint -->
+<div class="absolute inset-0 bg-indigo-900 opacity-90 z-0"></div>
+
+<!-- Title above the login form -->
+<h1 class="text-3xl font-semibold text-white absolute top-10 z-10 text-center w-full">
+NameCrafter | Login
+</h1>
+
+<!-- Login form container -->
+<div class="w-96 bg-white rounded-lg shadow-lg z-10 relative mt-20">
+<div class="text-4xl font-semibold text-center text-white py-8 rounded-t-lg bg-gradient-to-r from-secondary to-primary">
+Login
+</div>
+<form action="#" class="px-8 py-10">
+<div class="relative mb-5">
+<input type="text" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
+<label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
+Username
+</label>
+</div>
+<div class="relative mb-5">
+<input type="password" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
+<label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
+Password
+</label>
+</div>
+<div class="mb-5">
+<input type="submit" value="Login" class="w-full h-12 bg-gradient-to-r from-secondary to-primary text-white text-lg font-medium rounded-full cursor-pointer transition transform hover:scale-95">
+</div>
+<div class="text-center text-gray-700">
+Not a member? <a href="#" class="text-primary hover:underline">Signup now</a>
+</div>
+</form>
+</div>
+
+<!-- Initialize Particles.js -->
+<script>
+particlesJS("particles-js", {
+"particles": {
+"number": {
+"value": 80,
+"density": {
+"enable": true,
+"value_area": 800
+}
+},
+"color": {
+"value": "#ffffff"
+},
+"shape": {
+"type": "circle",
+"stroke": {
+"width": 0,
+"color": "#000000"
+},
+"polygon": {
+"nb_sides": 5
+}
+},
+"opacity": {
+"value": 0.7,
+"random": false,
+"anim": {
+"enable": false,
+"speed": 1,
+"opacity_min": 0.1,
+"sync": false
+}
+},
+"size": {
+"value": 30, // Increase particle size to appear as large stars
+"random": true,
+"anim": {
+"enable": false,
+"speed": 40,
+"size_min": 3,
+"sync": false
+}
+},
+"line_linked": {
+"enable": false, // Disable lines between particles for a clearer starry effect
+"distance": 150,
+"color": "#ffffff",
+"opacity": 0.4,
+"width": 1
+},
+"move": {
+"enable": true,
+"speed": 1,
+"direction": "none",
+"random": false,
+"straight": false,
+"out_mode": "out",
+"bounce": false,
+"attract": {
+"enable": false,
+"rotateX": 600,
+"rotateY": 1200
+}
+}
+},
+"interactivity": {
+"detect_on": "canvas",
+"events": {
+"onhover": {
+"enable": true,
+"mode": "repulse"
+},
+"onclick": {
+"enable": true,
+"mode": "push"
+},
+"resize": true
+},
+"modes": {
+"grab": {
+"distance": 400,
+"line_linked": {
+"opacity": 1
+}
+},
+"bubble": {
+"distance": 400,
+"size": 40,
+"duration": 2,
+"opacity": 8,
+"speed": 3
+},
+"repulse": {
+"distance": 100,
+"duration": 0.4
+},
+"push": {
+"particles_nb": 4
+},
+"remove": {
+"particles_nb": 2
+}
+}
+},
+"retina_detect": true
+});
+</script>
+
+</body>
 </html>
+
+
