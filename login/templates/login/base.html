@@ -27,18 +27,14 @@
    </head>
    <body class="h-screen w-full flex items-center justify-center bg-gray-200 font-poppins relative overflow-hidden">
 
-      <!-- Particle background container -->
       <div id="particles-js" class="absolute inset-0 z-0"></div>
 
-      <!-- Colored overlay for purple/blue tint -->
       <div class="absolute inset-0 bg-indigo-900 opacity-90 z-0"></div>
 
-      <!-- Title above the login form -->
       <h1 class="text-3xl font-semibold text-white absolute top-10 z-10 text-center w-full">
         Welcome to NameCrafter 
       </h1>
 
-      <!-- Login form container -->
       <div class="w-96 bg-white rounded-lg shadow-lg z-10 relative mt-20">
          <div class="text-4xl font-semibold text-center text-white py-8 rounded-t-lg bg-gradient-to-r from-secondary to-primary">
               {% block title1 %}{% endblock %}
@@ -46,7 +42,6 @@
          {% block content%}{% endblock %}
       </div>
 
-      <!-- Initialize Particles.js -->
       <script>
          particlesJS("particles-js", {
             "particles": {
@@ -81,7 +76,7 @@
                   }
                },
                "size": {
-                  "value": 30,  // Increase particle size to appear as large stars
+                  "value": 30,  
                   "random": true,
                   "anim": {
                      "enable": false,
@@ -91,7 +86,7 @@
                   }
                },
                "line_linked": {
-                  "enable": false, // Disable lines between particles for a clearer starry effect
+                  "enable": true,
                   "distance": 150,
                   "color": "#ffffff",
                   "opacity": 0.4,
@@ -99,7 +94,7 @@
                },
                "move": {
                   "enable": true,
-                  "speed": 1,
+                  "speed": 3,
                   "direction": "none",
                   "random": false,
                   "straight": false,
@@ -134,7 +129,7 @@
                   },
                   "bubble": {
                      "distance": 400,
-                     "size": 40,
+                     "size": 60,
                      "duration": 2,
                      "opacity": 8,
                      "speed": 3
