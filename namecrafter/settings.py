@@ -81,7 +81,9 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-AUTH_USER_MODEL = 'login.User'  # Replace 'login' with your app name
+
+# Reference the custom user model if you have one in the login app
+AUTH_USER_MODEL = 'login.User'  
 
 
 # Password validation
@@ -118,3 +120,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Custom login URL setting
+LOGIN_URL = '/login/'
+

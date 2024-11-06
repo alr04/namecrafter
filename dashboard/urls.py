@@ -14,13 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
 from . import views
 
-# This part of the code takes the text from Views and puts it on our dashboard.
+# I’m setting up the URLs to link views to the homepage and about page on our dashboard.
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.homepage),
-    path('about/', views.about),
+    path('', views.homepage, name='homepage'),  # I’m naming this URL 'homepage' for easy reference.
+    path('about/', views.about, name='about'),  # I’m naming this URL 'about' for easy reference.
 ]
