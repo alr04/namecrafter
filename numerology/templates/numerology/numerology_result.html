@@ -1,8 +1,61 @@
-<form method="post">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/cloud2-bg.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Numerology Result</h1>
+        <p>Your numerology number is: <strong>{{ numerology_number }}</strong></p>
+        <p>Your fortune is: <strong>{{ life_path }}</strong></p>
+        <p><a href="{% url 'name_input' %}">Try Again</a></p>
+    </div>
+
+
+    <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+    
+    </form>
 
-<p>Your numerology number is: {{ numerology_number }}</p>
-<p>Your fortune is: {{ life_path }}</p>
+</body>
+</html>
