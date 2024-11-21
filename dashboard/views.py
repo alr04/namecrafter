@@ -9,9 +9,9 @@ from .models import UserActionLog  # Only import UserActionLog from models
 def homepage(request):
     # I’m fetching the recent logs for the logged-in user to display on the homepage.
     recent_logs = UserActionLog.objects.filter(user=request.user).order_by('-timestamp')[:10]
-    # I’m logging that the user accessed the homepage.
+    # # I’m logging that the user accessed the homepage.
     UserActionLog.objects.create(user=request.user, action="Viewed Homepage")
-    # I’m rendering the home.html template and passing recent_logs to it.
+    # # I’m rendering the home.html template and passing recent_logs to it.
     return render(request, 'dashboard/home.html', {'recent_logs': recent_logs})
 
 @login_required

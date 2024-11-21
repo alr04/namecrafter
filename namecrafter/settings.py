@@ -84,7 +84,7 @@ DATABASES = {
 }
 
 # Reference the custom user model if you have one in the login app
-AUTH_USER_MODEL = 'login.User'  
+AUTH_USER_MODEL = 'auth.User'  
 
 
 # Password validation

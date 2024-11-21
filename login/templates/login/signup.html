@@ -3,31 +3,17 @@
 {% block title1 %}Sign Up{% endblock %}
 
 {% block content %}
-<form method="POST" action="{% url 'login:register' %}" class="px-8 py-10">
+<form method="POST" action="{% url 'login:signup' %}" class="px-8 py-10">
     {% csrf_token %}
-    <div class="relative mb-5">
-       <input type="text" name="username" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
-       <label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
-          Username
-       </label>
-    </div>
-    <div class="relative mb-5">
-       <input type="password" name="password" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
-       <label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
-          Password
-       </label>
-    </div>
-    <div class="relative mb-5">
-        <input type="password" name="password2" required class="peer w-full h-12 px-4 border border-gray-300 rounded-full focus:outline-none focus:border-primary transition duration-300">
-        <label class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none transition duration-300 peer-focus:top-0 peer-focus:text-sm peer-focus:bg-white peer-valid:top-0 peer-valid:text-sm peer-focus:text-primary">
-           Confirm Password
-        </label>
-     </div>
+    {{ form.non_field_errors }}
+    {{ form.username }}
+    {{ form.password1 }}
+    {{ form.password2 }}
     <div class="mb-5">
-       <input type="submit" value="Register" class="w-full h-12 bg-gradient-to-r from-secondary to-primary text-white text-lg font-medium rounded-full cursor-pointer transition transform hover:scale-95">
+        <input type="submit" value="Register" class="w-full h-12 bg-gradient-to-r from-secondary to-primary text-white text-lg font-medium rounded-full cursor-pointer transition transform hover:scale-95">
     </div>
     <div class="text-center text-gray-700">
-       Already a member? <a href="{% url 'login:login_page' %}" class="text-primary hover:underline">Login here</a>
+       Already a member? <a href="{% url 'login:login' %}" class="text-primary hover:underline">Login here</a>
     </div>
 </form>
 <div class="mb-5 text-center text-gray-700 bold-text">
@@ -40,3 +26,4 @@
     {% endif %}
 </div>
 {% endblock %}
+
