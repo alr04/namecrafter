@@ -34,7 +34,17 @@ girl_names = [
 
 def calculate_all_combinations(last_name):
     results = []
-    for first_name in FIRST_NAMES:
+    for first_name in boy_names:
+        full_name = f"{first_name} {last_name}"
+        numerology_number, life_path_description = calculate_numerology(full_name)
+        results.append({
+            "full_name": full_name,
+            "numerology_number": numerology_number,
+            "life_path": life_path_description
+        })
+
+
+    for first_name in girl_names:
         full_name = f"{first_name} {last_name}"
         numerology_number, life_path_description = calculate_numerology(full_name)
         results.append({
@@ -118,7 +128,11 @@ def name_input(request):
             })
     else:
         form = NameForm()
-    return render(request, 'numerology/name_input.html', {'form': form})
+    return render(request, 'numerology/name_input.html', {
+        'form': form,
+        'boy_names': boy_names,
+        'girl_names': girl_names,})
+    
 
 
 
