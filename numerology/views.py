@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render 
 from .forms import NameForm
 
 
@@ -53,10 +53,6 @@ def calculate_all_combinations(last_name):
             "life_path": life_path_description
         })
     return results
-
-
-
-
 ##____________________________________________________________________________________________________
 
 
@@ -115,24 +111,39 @@ def name_input(request):
     if request.method == 'POST':
         form = NameForm(request.POST)
         if form.is_valid():
+            # Get first and last name from the form
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
-            name = full_name = f"{first_name} {last_name}"
-            #name = form.cleaned_data['name']
-            numerology_number, life_path_description = calculate_numerology(name)
-            return render(request, 'numerology/numerology_result.html', {
+
+            # Calculate numerology for the entered name
+            full_name = f"{first_name} {last_name}"
+            numerology_number, life_path_description = calculate_numerology(full_name)
+
+            # Calculate results for all boy and girl names using the last name
+            results = calculate_all_combinations(last_name)
+            boy_results = [result for result in results if result['full_name'].split()[0] in boy_names]
+            girl_results = [result for result in results if result['full_name'].split()[0] in girl_names]
+
+            # Render the input page with all results
+            return render(request, 'numerology/name_input.html', {
+                'form': form,
                 'numerology_number': numerology_number,
-                'life_path': life_path_description,
+                'life_path_description': life_path_description,
                 'first_name': first_name,
-                'last_name': last_name
+                'last_name': last_name,
+                'boy_results': boy_results,
+                'girl_results': girl_results,
             })
     else:
         form = NameForm()
+
+    # Render the input page without results initially
     return render(request, 'numerology/name_input.html', {
         'form': form,
         'boy_names': boy_names,
-        'girl_names': girl_names,})
-    
+        'girl_names': girl_names,
+    })
+
 
 
 

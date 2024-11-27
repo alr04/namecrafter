@@ -76,6 +76,8 @@
         .name-list li {
             margin-bottom: 8px;
             color: #555;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
 
@@ -91,33 +93,47 @@
             width: 100%;
             top: 0;
             left: 0;
+            box-sizing: border-box;
+            z-index: 10;
         }
         
         .nav-links {
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
             margin: 0;
             padding: 0;
-            position: absolute; /* Absolute positioning to move the links */
-            right: 20px; /* Move the navbar items slightly to the right */
-            top: 50%; /* Vertically center the navbar links */
-            transform: translateY(-50%); /* Fine-tune vertical centering */
+            overflow: hidden;
         }
         
         .nav-links li {
             margin-left: 20px; /* Space between nav items */
+            white-space: nowrap;
         }
         
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            display: block;
         }
         
         .nav-links a:hover {
             color: #007bff;
         }
-        
+
+
+
+        @media (max-width: 768px) {
+        .nav-links {
+            flex-direction: column; 
+            padding: 10px;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+}
     </style>
 </head>
      <!-- Navbar -->
@@ -134,39 +150,67 @@
         </div>
     </nav>
     <div class="main-container">
+        <!-- Boy Names Results -->
         <div class="name-list-container">
-            <h2>Top 100 Boy Names</h2>
+            <h2>Numerology Results for Boy Names</h2>
             <ul class="name-list">
-                {% for name in boy_names %}
-                <li>{{ name }}</li>
-                {% endfor %}
+                {% if boy_results %}
+                    {% for result in boy_results %}
+                        <li>
+                            <strong>{{ result.full_name }}</strong>: 
+                            Numerology Number: {{ result.numerology_number }},
+                            Life Path: {{ result.life_path }}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No boy name results yet.</p>
+                {% endif %}
             </ul>
         </div>
-
+    
+        <!-- User's Life Path -->
         <div class="container">
             <h1>Enter Your Name</h1>
-                <form method="post">
-                    {% csrf_token %}
-                    <label for="id_first_name">First Name:</label>
-                    {{ form.first_name }}
-                    <br>
-                    <br>
-                    <label for="id_last_name">Last Name:</label>
-                    {{ form.last_name }}
-                    <br>
-                    <br>
-                    <button type="submit">Submit
-                    </button>
-                </form>
+            <form method="post">
+                {% csrf_token %}
+                <label for="id_first_name">First Name:</label>
+                {{ form.first_name }}
+                <br><br>
+                <label for="id_last_name">Last Name:</label>
+                {{ form.last_name }}
+                <br><br>
+                <button type="submit">Submit</button>
+            </form>
+    
+            {% if numerology_number and life_path_description %}
+                <div style="margin-top: 20px;">
+                    <h2>Your Numerology Result</h2>
+                    <p><strong>Full Name:</strong> {{ first_name }} {{ last_name }}</p>
+                    <p><strong>Numerology Number:</strong> {{ numerology_number }}</p>
+                    <p><strong>Life Path Description:</strong> {{ life_path_description }}</p>
+                </div>
+            {% endif %}
         </div>
+    
+    
+        <!-- Girl Names Results -->
         <div class="name-list-container">
-            <h2>Top 100 Girl Names</h2>
+            <h2>Numerology Results for Girl Names</h2>
             <ul class="name-list">
-                {% for name in girl_names %}
-                <li>{{ name }}</li>
-                {% endfor %}
+                {% if girl_results %}
+                    {% for result in girl_results %}
+                        <li>
+                            <strong>{{ result.full_name }}</strong>: 
+                            Numerology Number: {{ result.numerology_number }},
+                            Life Path: {{ result.life_path }}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No girl name results yet.</p>
+                {% endif %}
             </ul>
         </div>
     </div>
+    
 </body>
 </html>
