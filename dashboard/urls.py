@@ -21,4 +21,5 @@ from . import views
 urlpatterns = [
     path('', views.homepage, name='homepage'),  # I’m naming this URL 'homepage' for easy reference.
     path('about/', views.about, name='about'),  # I’m naming this URL 'about' for easy reference.
+    
 ]
