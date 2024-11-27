@@ -47,44 +47,53 @@
         
 
 
+        /* Keep the original styling for the navbar and brand */
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Keep space between brand and links */
             align-items: center;
             padding: 1rem 2rem;
-            background-color:rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
-            top:0;
+            top: 0;
             left: 0;
         }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
+        
+        /* Adjust the navbar links to be aligned on the top-right */
         .nav-links {
             list-style: none;
             display: flex;
             margin: 0;
             padding: 0;
+            position: absolute; /* Absolute positioning to move the links */
+            right: 20px; /* Move the navbar items slightly to the right */
+            top: 50%; /* Vertically center the navbar links */
+            transform: translateY(-50%); /* Fine-tune vertical centering */
         }
-
+        
+        /* Space out the navbar items */
         .nav-links li {
-            margin-left: 20px;
+            margin-left: 20px; /* Space between nav items */
         }
-
+        
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
         }
-
+        
         .nav-links a:hover {
-            color: #007bff; /* Optional hover color */
+            color: #007bff;
         }
+        
+        
+        
+        
+        
+        
+        
 
     </style>
 </head>
