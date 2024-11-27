@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = 'dashboard'
+#app_name = 'dashboard'
 
 
 # I’m setting up the URLs to link views to the homepage and about page on our dashboard.
