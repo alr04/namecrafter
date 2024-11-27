@@ -2,6 +2,54 @@ from django.shortcuts import render
 from .forms import NameForm
 
 
+# Top 100 baby boy names in the US for 2022
+boy_names = [
+    "Liam", "Noah", "Oliver", "James", "Elijah", "William", "Henry", "Lucas", "Benjamin", "Theodore",
+    "Mateo", "Levi", "Sebastian", "Daniel", "Jack", "Michael", "Alexander", "Owen", "Asher", "Samuel",
+    "Ethan", "Leo", "Jackson", "Mason", "Ezra", "John", "Hudson", "Luca", "Aiden", "Joseph",
+    "David", "Jacob", "Logan", "Luke", "Julian", "Gabriel", "Grayson", "Wyatt", "Matthew", "Maverick",
+    "Dylan", "Isaac", "Elias", "Anthony", "Thomas", "Jayden", "Carter", "Santiago", "Ezekiel", "Charles",
+    "Josiah", "Caleb", "Cooper", "Lincoln", "Miles", "Christopher", "Nathan", "Isaiah", "Kai", "Joshua",
+    "Andrew", "Angel", "Adrian", "Cameron", "Nolan", "Waylon", "Jaxon", "Roman", "Eli", "Wesley",
+    "Aaron", "Ian", "Christian", "Ryan", "Leonardo", "Brooks", "Axel", "Walker", "Jonathan", "Easton",
+    "Everett", "Weston", "Bennett", "Robert", "Jameson", "Landon", "Silas", "Jose", "Beau", "Micah",
+    "Colton", "Jordan", "Jeremiah", "Parker", "Greyson", "Rowan", "Adam", "Nicholas", "Theo", "Xavier"
+]
+
+# Top 100 baby girl names in the US for 2022
+girl_names = [
+    "Olivia", "Emma", "Charlotte", "Amelia", "Sophia", "Isabella", "Ava", "Mia", "Evelyn", "Luna",
+    "Harper", "Camila", "Sofia", "Scarlett", "Elizabeth", "Eleanor", "Emily", "Chloe", "Mila", "Violet",
+    "Penelope", "Gianna", "Aria", "Abigail", "Ella", "Avery", "Hazel", "Nora", "Layla", "Lily",
+    "Aurora", "Nova", "Ellie", "Madison", "Grace", "Isla", "Willow", "Zoe", "Riley", "Stella",
+    "Eliana", "Ivy", "Victoria", "Emilia", "Zoey", "Naomi", "Hannah", "Lucy", "Elena", "Lillian",
+    "Maya", "Leah", "Paisley", "Addison", "Natalie", "Valentina", "Everly", "Delilah", "Leilani", "Madelyn",
+    "Kinsley", "Ruby", "Sophie", "Alice", "Genesis", "Claire", "Audrey", "Sadie", "Aaliyah", "Josephine",
+    "Autumn", "Brooklyn", "Quinn", "Kennedy", "Cora", "Savannah", "Caroline", "Athena", "Natalia", "Hailey",
+    "Aubrey", "Emery", "Anna", "Iris", "Bella", "Eloise", "Skylar", "Jade", "Gabriella", "Ariana",
+    "Maria", "Adeline", "Lydia", "Sarah", "Nevaeh", "Serenity", "Liliana", "Ayla", "Everleigh", "Raelynn"
+]
+
+
+
+def calculate_all_combinations(last_name):
+    results = []
+    for first_name in FIRST_NAMES:
+        full_name = f"{first_name} {last_name}"
+        numerology_number, life_path_description = calculate_numerology(full_name)
+        results.append({
+            "full_name": full_name,
+            "numerology_number": numerology_number,
+            "life_path": life_path_description
+        })
+    return results
+
+
+
+
+##____________________________________________________________________________________________________
+
+
 def calculate_numerology(name):
     """Calculates the numerology number and life path based on the name."""
 
@@ -45,16 +93,41 @@ def calculate_numerology(name):
 
     return numerology_number, life_path_description
 
+
+
+
+
+
+
+
+
 def name_input(request):
     if request.method == 'POST':
         form = NameForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            name = full_name = f"{first_name} {last_name}"
+            #name = form.cleaned_data['name']
             numerology_number, life_path_description = calculate_numerology(name)
-            return render(request, 'numerology/numerology_result.html', {'numerology_number': numerology_number, 'life_path': life_path_description})
+            return render(request, 'numerology/numerology_result.html', {
+                'numerology_number': numerology_number,
+                'life_path': life_path_description,
+                'first_name': first_name,
+                'last_name': last_name
+            })
     else:
         form = NameForm()
     return render(request, 'numerology/name_input.html', {'form': form})
+
+
+
+
+
+
+
+
+
 
 def numerology_result(request):
     # Retrieve results from the session
@@ -68,3 +141,8 @@ def numerology_result(request):
         'numerology_number': numerology_number,
         'life_path': life_path_description
     })
+
+##___________________________________________________________________________________________
+
+
+    
