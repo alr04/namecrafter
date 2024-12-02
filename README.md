@@ -44,8 +44,6 @@ python manage.py runserver
 - Register for an account and log in.
 - Enter desired traits and characteristics related to Chaldean numerology.
 - View the generated names based on your inputs.
-- Manage past queries through your dashboard.
-- Explore the “Top 10 Names of the Week” to see trending names.
 
 
 
