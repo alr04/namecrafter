@@ -3,7 +3,7 @@ Project for CSI 2999
 
 ## Description
 
-NameCrafter is an online app that helps users come up with names based on Chaldean numerology traits. Instead of just looking up what existing names mean, NameCrafter lets users type in traits they want like personality vibes or life path numbers and get name ideas that match those traits.
+NameCrafter is an online app that helps users come up with names based on Chaldean numerology traits. Instead of just looking up what existing names mean, NameCrafter lets users type in a life path number which maps to various traits, and generate names based off of that number.
 
 ## Motivation
 
@@ -15,7 +15,7 @@ This project fills the gap where there aren’t many interactive numerology tool
 
 ## Lessons Learned
 
-While working on NameCrafter, we learned a lot about Chaldean numerology, using Django, building RESTful APIs, and designing user-friendly interfaces. This project pushed us to create a cool experience that combines cultural history with today’s tech.
+While working on NameCrafter, we learned a lot about Chaldean numerology, using Django, building APIs, and designing user-friendly interfaces. This project pushed us to create a cool experience that combines cultural history with today’s tech.
 
 **Installation**
 
