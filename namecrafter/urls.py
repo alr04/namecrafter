@@ -22,7 +22,8 @@ from namecrafter import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('login/', include('login.urls')),
-    path('', include('dashboard.urls')),
+    path('', include('dashboard1.urls')),
     path('numerology/', include('numerology.urls')),
+    path('account/', include('account.urls')),
     
 ]

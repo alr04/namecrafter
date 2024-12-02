@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import User
 from django.contrib.auth import login
-from dashboard import views
 from .forms import SignupForm, LoginForm
 
 # def register(request):
@@ -42,7 +40,7 @@ def log_in(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect(views.homepage) 
+            return redirect("dashboard1:homepage") 
     else:
         form = LoginForm()
     return render(request, 'login/login.html', {'form': form})
@@ -53,7 +51,7 @@ def signup(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your account has been created successfully.")
-            return redirect(log_in)
+            return redirect('login:login')
     else:
         messages.error(request, "Invalid username or password.")
         form = SignupForm()

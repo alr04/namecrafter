@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,8 +44,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "login",
-    "dashboard",
+    "dashboard1",
     'numerology',
+    "account",
 ]
 
 MIDDLEWARE = [
@@ -126,3 +133,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Custom login URL setting
 LOGIN_URL = '/login/'
 
+# Load environment variables from .env file
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+
+# Retrieve the API key from the environment
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
