@@ -51,7 +51,7 @@ python manage.py runserver
 
 - **Albert Hua (alr04)** - [GitHub Profile](https://github.com/alr04)
 - **Drake Weller (DrakeJay)** - [GitHub Profile](https://github.com/DrakeJay)
-- **Joshua Brown (RTOUSchoolAccount)** - [GitHub Profile](https://github.com/RTOUSchoolAccount)
+- **Joshua Brown (JBrown28)** - [GitHub Profile](https://github.com/RTOUSchoolAccount)
 - **Justin Elia (jelia4PF)** - [GitHub Profile](https://github.com/jelia4PF)
 
 ## License
