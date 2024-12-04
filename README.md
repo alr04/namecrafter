@@ -49,10 +49,10 @@ python manage.py runserver
 
 ## Credits
 
-- **Albert Hua** - [GitHub Profile](https://github.com/alr04)
-- **Drake Weller** - [GitHub Profile](https://github.com/DrakeJay)
-- **Joshua Brown** - [GitHub Profile](https://github.com/RTOUSchoolAccount)
-- **Justin Elia** - [GitHub Profile](https://github.com/jelia4PF)
+- **Albert Hua (alr04)** - [GitHub Profile](https://github.com/alr04)
+- **Drake Weller (DrakeJay)** - [GitHub Profile](https://github.com/DrakeJay)
+- **Joshua Brown (RTOUSchoolAccount)** - [GitHub Profile](https://github.com/RTOUSchoolAccount)
+- **Justin Elia (jelia4PF)** - [GitHub Profile](https://github.com/jelia4PF)
 
 ## License
 
